@@ -1,0 +1,20 @@
+#include "btBulletDynamicsCommon.h"
+#include <stdio.h>
+class CSim {
+  private:
+  // Variables
+  btDefaultCollisionConfiguration* collisionConfiguration = new btDefaultCollisionConfiguration();
+  btCollisionDispatcher* dispatcher = new btCollisionDispatcher(collisionConfiguration);
+  btBroadphaseInterface* overlappingPairCache = new btDbvtBroadphase();
+  btSequentialImpulseConstraintSolver* solver = new btSequentialImpulseConstraintSolver;
+  btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher,overlappingPairCache,solver,collisionConfiguration);
+  btAlignedObjectArray<btCollisionShape*> collisionShapes;
+  int i;
+  //Functions
+  public:
+  CSim();
+  ~CSim();
+  void createground();
+  void createsphere();
+  void stepsim();
+};

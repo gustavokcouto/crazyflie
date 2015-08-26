@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(simple1)
+
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/glfw)
+
+add_executable(simple1 main.cpp)
+
+include_directories(${PROJECT_SOURCE_DIR}/glfw/include)
+
+target_link_libraries(simple1 glfw ${GLFW_LIBRARIES})

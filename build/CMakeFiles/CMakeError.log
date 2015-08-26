@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec663266675/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec663266675.dir/build.make CMakeFiles/cmTryCompileExec663266675.dir/build
+make[1]: Entrando no diretório `/home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec663266675.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec663266675.dir/CheckSymbolExists.c.o   -c /home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec663266675
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec663266675.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec663266675.dir/CheckSymbolExists.c.o  -o cmTryCompileExec663266675 -rdynamic 
+CMakeFiles/cmTryCompileExec663266675.dir/CheckSymbolExists.c.o: na função `main':
+CheckSymbolExists.c:(.text+0xa): referência indefinida para `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: Saindo do diretório `/home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp'
+make[1]: ** [cmTryCompileExec663266675] Erro 1
+make: ** [cmTryCompileExec663266675/fast] Erro 2
+
+File /home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1967015039/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1967015039.dir/build.make CMakeFiles/cmTryCompileExec1967015039.dir/build
+make[1]: Entrando no diretório `/home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1967015039.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec1967015039.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1967015039
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1967015039.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec1967015039.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1967015039 -rdynamic -lpthreads 
+/usr/bin/ld: não foi possível encontrar -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: ** [cmTryCompileExec1967015039] Erro 1
+make[1]: Saindo do diretório `/home/gustavo/git/crazyflie-sim/build/CMakeFiles/CMakeTmp'
+make: ** [cmTryCompileExec1967015039/fast] Erro 2
+
+
